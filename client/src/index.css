@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import 'leaflet/dist/leaflet.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-surface-50 text-surface-900 font-sans antialiased;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5
+           font-semibold text-base transition-all duration-200 active:scale-[0.97]
+           focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50
+           disabled:cursor-not-allowed select-none min-h-[48px];
+  }
+  .btn-primary {
+    @apply btn bg-brand-600 text-white hover:bg-brand-700 focus:ring-brand-500
+           shadow-lg shadow-brand-600/25;
+  }
+  .btn-secondary {
+    @apply btn bg-surface-200 text-surface-800 hover:bg-surface-200/80
+           focus:ring-surface-700;
+  }
+  .btn-danger {
+    @apply btn bg-red-600 text-white hover:bg-red-700 focus:ring-red-500;
+  }
+  .input {
+    @apply w-full rounded-xl border border-surface-200 bg-white px-4 py-3.5
+           text-base placeholder:text-surface-700/40 transition-colors
+           focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent
+           min-h-[48px];
+  }
+  .card {
+    @apply bg-white rounded-2xl border border-surface-200/60 shadow-sm p-5;
+  }
+  .glass-card {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+  }
+  .glass-dark {
+    background: rgba(15, 23, 42, 0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .sidebar-link {
+    @apply flex items-center gap-3 px-4 py-3.5 rounded-xl text-base font-medium
+           transition-colors min-h-[48px] select-none;
+  }
+  .sidebar-link-active {
+    @apply sidebar-link bg-brand-50 text-brand-700;
+  }
+  .sidebar-link-inactive {
+    @apply sidebar-link text-surface-700 hover:bg-surface-100;
+  }
+}
+
